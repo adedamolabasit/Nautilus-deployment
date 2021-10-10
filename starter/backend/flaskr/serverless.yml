@@ -1,0 +1,16 @@
+service: node-express-lambda
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  hello:
+    handler: handler.handler
+    events:
+      - http:
+          path: /
+          method: get
